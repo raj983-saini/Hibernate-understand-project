@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/java_hibernate_4_pm</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">ashwin1234</property>
+
+        <!-- JDBC and connection pool settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Enable Hibernate's second level cache -->
+        <!--<property name="hibernate.cache.use_second_level_cache"> true</property>
+        <property name="hibernate.cache.region.factory_class"> org.hibernate.cache.ehcache.EhCacheRegionFactory </property>-->
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Logging -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.use_sql_comments">true</property>
+
+
+        <!--<mapping class="org.example.single_table_inheritance.Vehicle"/>
+        <mapping class="org.example.single_table_inheritance.Car"/>
+        <mapping class="org.example.single_table_inheritance.Truck"/>-->
+
+
+        <!-- Table per concrete class -->
+        <!--<mapping class="org.example.table_per_concrete_inheritance.VehicleTPC"/>
+        <mapping class="org.example.table_per_concrete_inheritance.CarTPC"/>
+        <mapping class="org.example.table_per_concrete_inheritance.TruckTPC"/>-->
+
+        <!--<mapping class="org.example.table_per_subclass_joined_table.Employee"/>
+        <mapping class="org.example.table_per_subclass_joined_table.Manager"/>
+        <mapping class="org.example.table_per_subclass_joined_table.Engineer"/>-->
+
+        <mapping class="org.example.table_per_subclass_joined_table.other_example.Employee"/>
+        <mapping class="org.example.table_per_subclass_joined_table.other_example.Customer"/>
+        <mapping class="org.example.table_per_subclass_joined_table.other_example.Person"/>
+
+
+
+    </session-factory>
+</hibernate-configuration>
